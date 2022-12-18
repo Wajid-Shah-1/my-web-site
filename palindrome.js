@@ -1,24 +1,24 @@
-// program to check if the string is palindrome or not
-
-function checkPalindrome(string) {
-
-    // convert string to an array
-    const arrayValues = string.split('');
-
-    // reverse the array values
-    const reverseArrayValues = arrayValues.reverse();
-
-    // convert array to string
-    const reverseString = reverseArrayValues.join('');
-
-    if (string == reverseString) {
-        console.log('It is a palindrome');
+// Checks if a string is a palindrome
+function checkPalindrome(str) {
+    // Checks if string is not greater than 10 characters
+    if (str.length > 10) {
+        alert("String is too long! Please enter a string less than 10 characters.");
+        return;
+    }
+    // Reverses the string
+    var revStr = str.split("").reverse().join("");
+    // Checks if reversed string is equal to original string
+    if (revStr === str) {
+        alert("The string is a palindrome!");
     } else {
-        console.log('It is not a palindrome');
+        alert("The string is not a palindrome!");
     }
 }
 
-//take input
-const string = prompt('Enter a string: ');
-
-checkPalindrome(string);
+// Get the value from the text box
+function getValue() {
+    // Get the value from the textbox
+    var str = document.getElementById("str").value;
+    // Call the checkPalindrome function
+    checkPalindrome(str);
+}
